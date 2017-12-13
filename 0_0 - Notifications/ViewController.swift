@@ -147,11 +147,24 @@ class ViewController: UIViewController {
     
     
     @objc func pressed(_ sender: UIButton!) {
-        let alertView = UIAlertView();
-        alertView.addButton(withTitle: "Ok");
-        alertView.title = "title";
-        alertView.message = "message";
-        alertView.show();
+  
+        let alertController = UIAlertController(title: "A Title",
+                                                message: "message.",
+                                                preferredStyle: UIAlertControllerStyle.alert);
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            (result : UIAlertAction) -> Void in
+            print("Cancel");
+        }
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            print("OK");
+        }
+        
+        alertController.addAction(cancelAction);
+        alertController.addAction(okAction);
+        self.present(alertController, animated: true, completion: nil);
         
         return;
     }
