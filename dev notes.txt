@@ -1,0 +1,47 @@
+@title 	Push Notifications with Parse
+@url 	https://codewithchris.com/lesson/push-notifications-with-parse/
+
+
+@section 	Notes
+	will need an Apple Membership and real device, need physically deployed
+		*membership required to deploy to phone
+	App has to register to receive notifications
+	Server side piece to trigger and send notifications to device
+	Once you've done it once or twice it becomes easier
+	...
+	In the Provisioning Portal we can create an App ID & Provisioning Profile
+		Profile - to deploy to device & also enable push notifications
+	Create a new iOS App ID
+		Hit '+' symbol in Identifiers->App IDs
+		Name: 'PushSample'
+		Bundle ID: 'com.codewithjustin.pushsample' <- used by App as well
+			*must be unique value
+		Enable Services: 'Push Notifications'
+		Press 'Register' to complete'
+	Create a new Provisioning Profile
+		Hit '+' symbol in Provisioning Profiles->Development
+		Development: iOS App Development
+		Select App ID	
+		Profile Name: Push Sample Dev Provisiong Profile
+	Setup App ID <-> Profile for Push Notifications (CSR)
+		Navigate to App ID
+		Press 'Edit'
+		Press 'Create SSL Certificate' for Development
+		Open Keychain Access
+		Select Menu->Cert Assist->Request a Cert
+		Common Name: 'Justin Reina Dev Push Key'
+		Save to Desktop
+		Upload this CSR file with 'Choose File...'
+		Now download it (new 'aps_development.cer')
+		Install to keychain (double click)		
+		Viewable now in Keychain Access->Certificates
+		Export (as .p12) <- No Password
+	Create new App (www.parse.com/apps)
+		Download 'parse-community/Parse-Swift' and extract
+			
+@section 	Steps
+	1. Create App ID and provisioning profile
+	2. Generate SSL certificate (install and export as p12)
+	3. Create Parse App and upload the p12 certificate
+	4. Create Xcode project, and parse libraries, register for push
+	5. Send push notification from the Parse dashboard
