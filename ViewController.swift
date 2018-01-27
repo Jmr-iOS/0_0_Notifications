@@ -21,7 +21,7 @@
  *      http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Notifications/Introduction/introNotifications.html#//apple_ref/doc/uid/10000043i
  *
  *  @section    Opens
- *      none current
+ *      update notification methods listed below causing warnings
  *
  *  @section    Legal Disclaimer
  *      All contents of this source file and/or any other Jaostech related source files are the explicit property of Jaostech
